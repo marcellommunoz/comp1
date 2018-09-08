@@ -36,36 +36,54 @@ class AnaliseLexica {
 			
 			if(currchar1 != eof && currchar1 !=10)
 			{
-								
 				if (currchar >= '0' && currchar <= '9'){
-					String numNatural = new String();
-					while(currchar >= '0' && currchar <= '9'){
-						numNatural.concat(String.valueOf(currchar));
+					int num = Integer.valueOf(String.valueOf(currchar));
+					arquivo.mark(1);
+					currchar1 = arquivo.read();
+					currchar = (char) currchar1;
+					if(!(currchar >= '0' && currchar <= '9')){
+						arquivo.reset();
 					}
-					return (new Token (numNatural, TokenType.NUM));
+					while (currchar >= '0' && currchar <= '9'){
+						num = num*10 + Integer.valueOf(String.valueOf(currchar));
+						arquivo.mark(1);
+						currchar1 = arquivo.read();
+						currchar = (char) currchar1;
+						if(!(currchar >= '0' && currchar <= '9')){
+							arquivo.reset();
+						}
+					}
+					return (new Token (String.valueOf(num), TokenType.NUM));
+					//return (new Token (currchar, TokenType.NUM));
 				}
 				else
 					switch (currchar){
 						case '(':
+							//return (new Token (currchar,TokenType.APar));
 							return (new Token (String.valueOf(currchar),TokenType.APar));
 						case ')':
 							return (new Token (String.valueOf(currchar),TokenType.FPar));
+							//return (new Token (currchar,TokenType.FPar));
 						case '+':
 							return (new Token (String.valueOf(currchar),TokenType.SOMA));
+							//return (new Token (currchar,TokenType.SOMA));
 						case '*':
 							return (new Token (String.valueOf(currchar),TokenType.MULT));
+							//return (new Token (currchar,TokenType.MULT));
 						case '/':
 							return (new Token (String.valueOf(currchar),TokenType.DIV));
+							//return (new Token (currchar,TokenType.DIV));
 						case '-':
 							return (new Token (String.valueOf(currchar),TokenType.SUB));
+							//return (new Token (currchar,TokenType.SUB));
 						
 						default: throw (new Exception("Caractere inválido: " + ((int) currchar)));
 					}
 			}
 
 			arquivo.close();
-			
+
 		return (new Token(String.valueOf(currchar),TokenType.EOF));
-		
+		//return (new Token(currchar,TokenType.EOF));
 	}
 }

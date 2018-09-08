@@ -1,8 +1,8 @@
-# comp1
+﻿# comp1
 
 <h2>Exercícios:</h2>
 
-* Modificar o compilador para que ele aceite números naturais.
+* ~~Modificar o compilador para que ele aceite números naturais.~~
 * ~~Adicionar as operações de divisão e subtração.~~
 * Substituir o back-end (CodeGen) por um back-end (Interpretador).
 
