@@ -6,7 +6,7 @@
 
 * ~~Modificar o compilador para que ele aceite números naturais.~~
 * ~~Adicionar as operações de divisão e subtração.~~
-* Substituir o back-end (CodeGen) por um back-end (Interpretador).
+* ~~Substituir o back-end (CodeGen) por um back-end (Interpretador).~~
 
 <h2>Trabalho:</h2>
 
