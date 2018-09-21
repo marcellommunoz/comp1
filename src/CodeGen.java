@@ -13,6 +13,11 @@ class CodeGen{
 		textoArquivo = geraCodigo2(arv) + "PRINT";
 		gravarArquivo.print(textoArquivo);
 		arquivo.close();
+		/**
+			Invoca a máquina de pilha para interpretar o código e exibí-lo na tela
+		**/
+		stackMachine maquinaPilha = new stackMachine();
+		maquinaPilha.readFile("saidaCodeGen.txt");
 		return (textoArquivo);
 	}
 	String geraCodigo2 (ArvoreSintatica arv) throws java.io.IOException
