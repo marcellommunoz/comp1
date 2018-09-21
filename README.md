@@ -10,4 +10,4 @@
 
 <h2>Trabalho:</h2>
 
-* Implementar uma máquina de pilha (em qualquer linguagem de programação) que execute o código gerado pelo compilador de expressão.
+* ~~Implementar uma máquina de pilha (em qualquer linguagem de programação) que execute o código gerado pelo compilador de expressão.~~
